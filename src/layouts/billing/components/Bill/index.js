@@ -27,7 +27,18 @@ import MDButton from "components/MDButton";
 // Material Dashboard 2 React context
 import { useMaterialUIController } from "context";
 
-function Bill({ name, company, email, vat, noGutter }) {
+function Bill({
+  id,
+  isin,
+  cusip,
+  issuer,
+  maturitydate,
+  coupon,
+  type,
+  facevalue,
+  status,
+  noGutter,
+}) {
   const [controller] = useMaterialUIController();
   const { darkMode } = controller;
 
@@ -52,7 +63,7 @@ function Bill({ name, company, email, vat, noGutter }) {
           mb={2}
         >
           <MDTypography variant="button" fontWeight="medium" textTransform="capitalize">
-            {name}
+            {id}
           </MDTypography>
 
           <MDBox display="flex" alignItems="center" mt={{ xs: 2, sm: 0 }} ml={{ xs: -1.5, sm: 0 }}>
@@ -68,24 +79,64 @@ function Bill({ name, company, email, vat, noGutter }) {
         </MDBox>
         <MDBox mb={1} lineHeight={0}>
           <MDTypography variant="caption" color="text">
-            Company Name:&nbsp;&nbsp;&nbsp;
+            ISIN:&nbsp;&nbsp;&nbsp;
             <MDTypography variant="caption" fontWeight="medium" textTransform="capitalize">
-              {company}
+              {isin}
             </MDTypography>
           </MDTypography>
         </MDBox>
         <MDBox mb={1} lineHeight={0}>
           <MDTypography variant="caption" color="text">
-            Email Address:&nbsp;&nbsp;&nbsp;
+            CUSIP:&nbsp;&nbsp;&nbsp;
+            <MDTypography variant="caption" fontWeight="medium" textTransform="capitalize">
+              {cusip}
+            </MDTypography>
+          </MDTypography>
+        </MDBox>
+        <MDBox mb={1} lineHeight={0}>
+          <MDTypography variant="caption" color="text">
+            Issuer:&nbsp;&nbsp;&nbsp;
+            <MDTypography variant="caption" fontWeight="medium" textTransform="capitalize">
+              {issuer}
+            </MDTypography>
+          </MDTypography>
+        </MDBox>
+        <MDBox mb={1} lineHeight={0}>
+          <MDTypography variant="caption" color="text">
+            Maturity Date:&nbsp;&nbsp;&nbsp;
+            <MDTypography variant="caption" fontWeight="medium" textTransform="capitalize">
+              {maturitydate}
+            </MDTypography>
+          </MDTypography>
+        </MDBox>
+        <MDBox mb={1} lineHeight={0}>
+          <MDTypography variant="caption" color="text">
+            Coupon:&nbsp;&nbsp;&nbsp;
             <MDTypography variant="caption" fontWeight="medium">
-              {email}
+              {coupon}
+            </MDTypography>
+          </MDTypography>
+        </MDBox>
+        <MDBox mb={1} lineHeight={0}>
+          <MDTypography variant="caption" color="text">
+            Type:&nbsp;&nbsp;&nbsp;
+            <MDTypography variant="caption" fontWeight="medium">
+              {type}
+            </MDTypography>
+          </MDTypography>
+        </MDBox>
+        <MDBox mb={1} lineHeight={0}>
+          <MDTypography variant="caption" color="text">
+            Face Value:&nbsp;&nbsp;&nbsp;
+            <MDTypography variant="caption" fontWeight="medium">
+              {facevalue}
             </MDTypography>
           </MDTypography>
         </MDBox>
         <MDTypography variant="caption" color="text">
-          VAT Number:&nbsp;&nbsp;&nbsp;
+          Status:&nbsp;&nbsp;&nbsp;
           <MDTypography variant="caption" fontWeight="medium">
-            {vat}
+            {status}
           </MDTypography>
         </MDTypography>
       </MDBox>
@@ -100,11 +151,17 @@ Bill.defaultProps = {
 
 // Typechecking props for the Bill
 Bill.propTypes = {
-  name: PropTypes.string.isRequired,
-  company: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  vat: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+  isin: PropTypes.string.isRequired,
+  cusip: PropTypes.string.isRequired,
+  issuer: PropTypes.string.isRequired,
+  maturitydate: PropTypes.string.isRequired,
+  coupon: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  facevalue: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
   noGutter: PropTypes.bool,
 };
 
 export default Bill;
+
