@@ -17,13 +17,13 @@ Coded by www.creative-tim.com
 import PropTypes from "prop-types";
 
 // @mui material components
-import Icon from "@mui/material/Icon";
+// import Icon from "@mui/material/Icon";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
-function Invoice({ date, id, price, noGutter }) {
+function Invoice({ date, id, status, noGutter }) {
   return (
     <MDBox
       component="li"
@@ -44,14 +44,8 @@ function Invoice({ date, id, price, noGutter }) {
       </MDBox>
       <MDBox display="flex" alignItems="center">
         <MDTypography variant="button" fontWeight="regular" color="text">
-          {price}
+          {status}
         </MDTypography>
-        <MDBox display="flex" alignItems="center" lineHeight={1} ml={3} sx={{ cursor: "pointer" }}>
-          <Icon fontSize="small">picture_as_pdf</Icon>
-          <MDTypography variant="button" fontWeight="bold">
-            &nbsp;PDF
-          </MDTypography>
-        </MDBox>
       </MDBox>
     </MDBox>
   );
@@ -66,7 +60,7 @@ Invoice.defaultProps = {
 Invoice.propTypes = {
   date: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
   noGutter: PropTypes.bool,
 };
 
