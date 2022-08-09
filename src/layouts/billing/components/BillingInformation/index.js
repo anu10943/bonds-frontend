@@ -26,31 +26,48 @@ import Bill from "layouts/billing/components/Bill";
 function BillingInformation() {
   return (
     <Card id="delete-account">
-      <MDBox pt={3} px={2}>
+      <MDBox pt={2} px={2} display="flex" justifyContent="space-between" alignItems="center">
         <MDTypography variant="h6" fontWeight="medium">
-          Billing Information
+          Security Information
         </MDTypography>
+        <MDButton variant="outlined" color="info" size="small">
+          Create New
+        </MDButton>
       </MDBox>
       <MDBox pt={1} pb={2} px={2}>
         <MDBox component="ul" display="flex" flexDirection="column" p={0} m={0}>
           <Bill
-            name="oliver liam"
-            company="viking burrito"
-            email="oliver@burrito.com"
-            vat="FRB1235476"
+            id="oliver liam"
+            isin="viking burrito"
+            cusip="oliver@burrito.com"
+            issuer="FRB1235476"
+            maturitydate="23-12-2022"
+            coupon="New"
+            type="Govt"
+            facevalue="None"
+            status=" Not matured"
           />
           <Bill
-            name="lucas harper"
-            company="stone tech zone"
-            email="lucas@stone-tech.com"
-            vat="FRB1235476"
+            id="oliver liam"
+            isin="viking burrito"
+            cusip="oliver@burrito.com"
+            issuer="FRB1235476"
+            maturitydate="23-12-2022"
+            coupon="New"
+            type="Govt"
+            facevalue="None"
+            status=" Not matured"
           />
           <Bill
-            name="ethan james"
-            company="fiber notion"
-            email="ethan@fiber.com"
-            vat="FRB1235476"
-            noGutter
+            id="oliver liam"
+            isin="viking burrito"
+            cusip="oliver@burrito.com"
+            issuer="FRB1235476"
+            maturitydate="23-12-2022"
+            coupon="New"
+            type="Govt"
+            facevalue="None"
+            status=" Not matured"
           />
         </MDBox>
       </MDBox>
